@@ -1,1 +1,72 @@
+{
+  "name": "ÚtilHub V17 — NOVA FLOW",
+  "short_name": "ÚtilHub",
+  "description": "ÚtilHub V17 con NOVA FLOW: herramientas útiles y 20 modos de animación seleccionables por cada usuario.",
+  "lang": "es",
+  "dir": "ltr",
 
+  "start_url": "./index.html",
+  "scope": "./",
+
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+
+  "orientation": "any",
+
+  "background_color": "#050914",
+  "theme_color": "#07111f",
+
+  "categories": [
+    "utilities",
+    "productivity",
+    "education"
+  ],
+
+  "prefer_related_applications": false,
+
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='.5' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3Cfilter id='s'%3E%3CfeGaussianBlur stdDeviation='10' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='512' height='512' rx='120' fill='%23050914'/%3E%3Crect x='20' y='20' width='472' height='472' rx='105' fill='none' stroke='url(%23g)' stroke-width='18'/%3E%3Ccircle cx='256' cy='256' r='170' fill='none' stroke='%2322d3ee' stroke-opacity='.18' stroke-width='3'/%3E%3Ccircle cx='256' cy='256' r='125' fill='none' stroke='%237c3aed' stroke-opacity='.22' stroke-width='3'/%3E%3Cpath d='M125 155v150c0 72 42 105 96 105s96-33 96-105V155M317 155v255m0-127h76m-76-128v255' fill='none' stroke='url(%23g)' stroke-width='42' stroke-linecap='round' stroke-linejoin='round' filter='url(%23s)'/%3E%3Cpath d='M70 315c105-78 237-101 374-55' fill='none' stroke='%2322d3ee' stroke-width='9' stroke-linecap='round' opacity='.9'/%3E%3Ccircle cx='444' cy='260' r='12' fill='white'/%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Calculadora",
+      "short_name": "Calcular",
+      "description": "Abrir calculadora",
+      "url": "./index.html#calculator"
+    },
+    {
+      "name": "Conversores",
+      "short_name": "Convertir",
+      "description": "Abrir conversores",
+      "url": "./index.html#conversores"
+    },
+    {
+      "name": "Notas",
+      "short_name": "Notas",
+      "description": "Abrir notas",
+      "url": "./index.html#notes"
+    },
+    {
+      "name": "NOVA FLOW",
+      "short_name": "NOVA",
+      "description": "Elegir animación NOVA FLOW",
+      "url": "./index.html#nova"
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+
+  "handle_links": "preferred"
+}
