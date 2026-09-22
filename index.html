@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="ÚtilHub V17 — NOVA FLOW X. Herramientas útiles para todos los días."
+  >
+
+  <meta name="theme-color" content="#050914">
+
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="ÚtilHub"
+  >
+
+  <title>ÚtilHub V17 — NOVA FLOW X</title>
+
+  <!-- ICONO DIRECTAMENTE EN CÓDIGO -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.55' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E"
+  >
+
+  <link rel="manifest" href="./manifest.webmanifest">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NOVA FLOW — FONDO DE PANTALLA COMPLETA
+       ===================================================== -->
+
+  <canvas id="novaCanvas"></canvas>
+
+  <div id="novaGlow"></div>
+
+  <div id="novaVignette"></div>
+
+  <div id="novaFlash"></div>
+
+
+  <!-- =====================================================
+       APP
+       ===================================================== -->
+
+  <div id="app">
+
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <button
+          class="brand-logo"
+          id="brandHome"
+          aria-label="Ir al inicio"
+        >
+          <svg
+            viewBox="0 0 80 80"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient
+                id="logoGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+                <stop offset="0%" stop-color="#22d3ee"/>
+                <stop offset="55%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+
+            <rect
+              x="5"
+              y="5"
+              width="70"
+              height="70"
+              rx="18"
+              fill="none"
+              stroke="url(#logoGradient)"
+              stroke-width="3"
+            />
+
+            <path
+              d="M18 21v22c0 10 6 16 14 16s14-6 14-16V21"
+              fill="none"
+              stroke="url(#logoGradient)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M49 21v38"
+              fill="none"
+              stroke="url(#logoGradient)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M49 40h14"
+              fill="none"
+              stroke="url(#logoGradient)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M63 21v38"
+              fill="none"
+              stroke="url(#logoGradient)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div class="brand-text">
+          <strong>ÚtilHub</strong>
+          <span>V17 · NOVA FLOW X</span>
+        </div>
+
+      </div>
+
+
+      <div class="header-actions">
+
+        <button
+          class="icon-button"
+          id="openSearch"
+          title="Buscar"
+          aria-label="Buscar"
+        >
+          🔎
+        </button>
+
+        <button
+          class="icon-button"
+          id="openNova"
+          title="NOVA FLOW"
+          aria-label="NOVA FLOW"
+        >
+          ✦
+        </button>
+
+        <button
+          class="icon-button"
+          id="themeButton"
+          title="Cambiar tema"
+          aria-label="Cambiar tema"
+        >
+          🌙
+        </button>
+
+        <button
+          class="icon-button"
+          id="menuButton"
+          title="Menú"
+          aria-label="Abrir menú"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MENÚ LATERAL / MÓVIL
+         =================================================== -->
+
+    <aside
+      id="sideMenu"
+      class="side-menu"
+      aria-hidden="true"
+    >
+
+      <div class="side-menu-head">
+
+        <div>
+          <strong>ÚtilHub</strong>
+          <small>V17 · NOVA FLOW X</small>
+        </div>
+
+        <button
+          id="closeSideMenu"
+          class="icon-button"
+          aria-label="Cerrar menú"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <nav class="side-navigation">
+
+        <button data-section="home">
+          🏠
+          <span>Inicio</span>
+        </button>
+
+        <button data-section="tools">
+          🧰
+          <span>Herramientas</span>
+        </button>
+
+        <button data-section="favorites">
+          ⭐
+          <span>Favoritos</span>
+        </button>
+
+        <button data-section="recent">
+          🕘
+          <span>Recientes</span>
+        </button>
+
+        <button data-section="nova">
+          ✦
+          <span>NOVA FLOW</span>
+        </button>
+
+        <button data-section="settings">
+          ⚙️
+          <span>Configuración</span>
+        </button>
+
+      </nav>
+
+    </aside>
+
+
+    <div
+      id="menuOverlay"
+      class="menu-overlay"
+    ></div>
+
+
+    <!-- ===================================================
+         CONTENIDO PRINCIPAL
+         =================================================== -->
+
+    <main class="main-content">
+
+
+      <!-- =================================================
+           HERO
+           ================================================= -->
+
+      <section
+        id="home"
+        class="hero-section"
+      >
+
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            ✦ NOVA FLOW X · V17
+          </span>
+
+          <h1>
+            Todo lo útil,
+            <span>en un solo lugar.</span>
+          </h1>
+
+          <p>
+            Herramientas rápidas para estudiar, organizarte,
+            convertir datos, buscar productos, encontrar comida
+            y mucho más.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <button
+              class="primary-button"
+              id="heroTools"
+            >
+              🧰 Explorar herramientas
+            </button>
+
+            <button
+              class="secondary-button"
+              id="heroNova"
+            >
+              ✦ Personalizar NOVA
+            </button>
+
+          </div>
+
+
+          <!-- BUSCADOR -->
+
+          <div class="global-search">
+
+            <span>⌕</span>
+
+            <input
+              id="globalSearch"
+              type="search"
+              autocomplete="off"
+              placeholder="Buscar una herramienta..."
+              aria-label="Buscar una herramienta"
+            >
+
+            <kbd>Ctrl</kbd>
+            <kbd>K</kbd>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NOVA CORE
+             ================================================= -->
+
+        <div class="nova-preview">
+
+          <div class="nova-core">
+
+            <div class="nova-orbit orbit-1"></div>
+            <div class="nova-orbit orbit-2"></div>
+            <div class="nova-orbit orbit-3"></div>
+
+            <div class="nova-energy"></div>
+
+            <div class="nova-core-center">
+              <span>✦</span>
+              <strong id="heroNovaMode">
+                COSMIC
+              </strong>
+              <small>
+                NOVA FLOW
+              </small>
+            </div>
+
+          </div>
+
+
+          <div class="nova-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+              NOVA ACTIVO
+            </span>
+
+            <strong id="heroNovaStatus">
+              COSMIC
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           BARRA DE ACCIONES
+           ================================================= -->
+
+      <section class="quick-bar">
+
+        <button data-action="calculator">
+          🧮
+          <span>Calculadora</span>
+        </button>
+
+        <button data-action="notes">
+          📝
+          <span>Notas</span>
+        </button>
+
+        <button data-action="tasks">
+          ☑️
+          <span>Tareas</span>
+        </button>
+
+        <button data-action="shopping">
+          🛒
+          <span>Compras</span>
+        </button>
+
+        <button data-action="food">
+          🍔
+          <span>Comidas</span>
+        </button>
+
+        <button data-action="qr">
+          ▣
+          <span>QR</span>
+        </button>
+
+      </section>
+
+
+      <!-- =================================================
+           HERRAMIENTAS
+           ================================================= -->
+
+      <section
+        id="tools"
+        class="tools-section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              HERRAMIENTAS
+            </span>
+
+            <h2>
+              ¿Qué necesitas hacer?
+            </h2>
+          </div>
+
+          <span
+            id="toolCount"
+            class="tool-count"
+          >
+            0 herramientas
+          </span>
+
+        </div>
+
+
+        <!-- CATEGORÍAS -->
+
+        <div
+          id="categoryBar"
+          class="category-bar"
+        >
+
+          <button
+            class="category-button active"
+            data-category="all"
+          >
+            Todo
+          </button>
+
+          <button
+            class="category-button"
+            data-category="calculo"
+          >
+            🧮 Cálculo
+          </button>
+
+          <button
+            class="category-button"
+            data-category="conversion"
+          >
+            🔄 Conversión
+          </button>
+
+          <button
+            class="category-button"
+            data-category="tiempo"
+          >
+            ⏱️ Tiempo
+          </button>
+
+          <button
+            class="category-button"
+            data-category="texto"
+          >
+            ✍️ Texto
+          </button>
+
+          <button
+            class="category-button"
+            data-category="organizacion"
+          >
+            📋 Organización
+          </button>
+
+          <button
+            class="category-button"
+            data-category="utilidades"
+          >
+            🛠️ Utilidades
+          </button>
+
+          <button
+            class="category-button"
+            data-category="comida"
+          >
+            🍔 Comidas
+          </button>
+
+          <button
+            class="category-button"
+            data-category="compras"
+          >
+            🛒 Compras
+          </button>
+
+        </div>
+
+
+        <!-- GRID DINÁMICO -->
+
+        <div
+          id="toolsGrid"
+          class="tools-grid"
+        >
+        </div>
+
+
+        <div
+          id="emptyTools"
+          class="empty-state hidden"
+        >
+          <div>🔎</div>
+          <h3>No encontramos esa herramienta</h3>
+          <p>
+            Prueba con otro nombre o cambia de categoría.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           NOVA FLOW CENTER
+           ================================================= -->
+
+      <section
+        id="novaSection"
+        class="nova-section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              NOVA FLOW X
+            </span>
+
+            <h2>
+              Personaliza tu experiencia
+            </h2>
+
+            <p>
+              Cada usuario puede escoger su propio NOVA FLOW.
+            </p>
+          </div>
+
+          <span class="nova-version">
+            20 MODOS
+          </span>
+
+        </div>
+
+
+        <!-- MODO ACTUAL -->
+
+        <div class="nova-current-card">
+
+          <div class="nova-current-icon">
+            ✦
+          </div>
+
+          <div class="nova-current-info">
+
+            <small>
+              NOVA ACTUAL
+            </small>
+
+            <strong id="currentNovaName">
+              COSMIC
+            </strong>
+
+            <span id="currentNovaDescription">
+              Partículas y estrellas cósmicas.
+            </span>
+
+          </div>
+
+          <button
+            id="randomNovaButton"
+            class="secondary-button"
+          >
+            🎲 Aleatorio
+          </button>
+
+        </div>
+
+
+        <!-- MODOS NOVA -->
+
+        <div
+          id="novaModesGrid"
+          class="nova-modes-grid"
+        >
+        </div>
+
+
+        <!-- CONTROLES -->
+
+        <div class="nova-controls-panel">
+
+          <div class="panel-title">
+
+            <div>
+              <span class="eyebrow">
+                NOVA CONTROL CENTER
+              </span>
+
+              <h3>
+                Ajustes de animación
+              </h3>
+            </div>
+
+            <button
+              id="resetNova"
+              class="small-button"
+            >
+              Restaurar
+            </button>
+
+          </div>
+
+
+          <div class="nova-presets">
+
+            <button
+              data-performance="ultra"
+              class="preset-button"
+            >
+              ⚡ ULTRA
+            </button>
+
+            <button
+              data-performance="balanced"
+              class="preset-button active"
+            >
+              ⚖️ EQUILIBRADO
+            </button>
+
+            <button
+              data-performance="battery"
+              class="preset-button"
+            >
+              🔋 AHORRO
+            </button>
+
+          </div>
+
+
+          <div class="controls-grid">
+
+            <label class="range-control">
+
+              <span>
+                Intensidad
+                <output id="intensityValue">70</output>
+              </span>
+
+              <input
+                id="novaIntensity"
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+              >
+
+            </label>
+
+
+            <label class="range-control">
+
+              <span>
+                Velocidad
+                <output id="speedValue">60</output>
+              </span>
+
+              <input
+                id="novaSpeed"
+                type="range"
+                min="0"
+                max="100"
+                value="60"
+              >
+
+            </label>
+
+
+            <label class="range-control">
+
+              <span>
+                Partículas
+                <output id="particlesValue">65</output>
+              </span>
+
+              <input
+                id="novaParticles"
+                type="range"
+                min="0"
+                max="100"
+                value="65"
+              >
+
+            </label>
+
+
+            <label class="range-control">
+
+              <span>
+                Brillo
+                <output id="glowValue">70</output>
+              </span>
+
+              <input
+                id="novaGlowRange"
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+              >
+
+            </label>
+
+
+            <label class="range-control">
+
+              <span>
+                Profundidad
+                <output id="depthValue">55</output>
+              </span>
+
+              <input
+                id="novaDepth"
+                type="range"
+                min="0"
+                max="100"
+                value="55"
+              >
+
+            </label>
+
+
+            <label class="range-control">
+
+              <span>
+                Conexiones
+                <output id="connectionsValue">50</output>
+              </span>
+
+              <input
+                id="novaConnections"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+              >
+
+            </label>
+
+          </div>
+
+
+          <!-- INTERRUPTORES -->
+
+          <div class="switches-grid">
+
+            <label class="switch-row">
+
+              <span>
+                🖱️ Reacción al cursor
+              </span>
+
+              <input
+                id="cursorReaction"
+                type="checkbox"
+                checked
+              >
+
+              <i></i>
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                👆 Reacción al toque
+              </span>
+
+              <input
+                id="touchReaction"
+                type="checkbox"
+                checked
+              >
+
+              <i></i>
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                ✨ Brillos
+              </span>
+
+              <input
+                id="glowEffects"
+                type="checkbox"
+                checked
+              >
+
+              <i></i>
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                🔗 Conexiones
+              </span>
+
+              <input
+                id="particleConnections"
+                type="checkbox"
+                checked
+              >
+
+              <i></i>
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                💥 Ondas al hacer clic
+              </span>
+
+              <input
+                id="clickWaves"
+                type="checkbox"
+                checked
+              >
+
+              <i></i>
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                🔄 NOVA AUTO
+              </span>
+
+              <input
+                id="novaAuto"
+                type="checkbox"
+              >
+
+              <i></i>
+
+            </label>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FAVORITOS / RECIENTES
+           ================================================= -->
+
+      <section
+        id="favorites"
+        class="secondary-section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              PERSONAL
+            </span>
+
+            <h2>
+              Tus favoritos
+            </h2>
+          </div>
+
+        </div>
+
+        <div
+          id="favoritesGrid"
+          class="mini-tools-grid"
+        >
+        </div>
+
+      </section>
+
+
+      <section
+        id="recent"
+        class="secondary-section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              HISTORIAL
+            </span>
+
+            <h2>
+              Usadas recientemente
+            </h2>
+          </div>
+
+          <button
+            id="clearRecent"
+            class="small-button"
+          >
+            Limpiar
+          </button>
+
+        </div>
+
+        <div
+          id="recentGrid"
+          class="mini-tools-grid"
+        >
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           CONFIGURACIÓN
+           ================================================= -->
+
+      <section
+        id="settings"
+        class="settings-section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              CONFIGURACIÓN
+            </span>
+
+            <h2>
+              Tu ÚtilHub
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="settings-grid">
+
+          <article class="settings-card">
+
+            <div class="settings-icon">
+              🎨
+            </div>
+
+            <div>
+              <h3>Tema</h3>
+              <p>
+                Cambia entre tema claro y oscuro.
+              </p>
+            </div>
+
+            <button
+              id="settingsTheme"
+              class="small-button"
+            >
+              Cambiar
+            </button>
+
+          </article>
+
+
+          <article class="settings-card">
+
+            <div class="settings-icon">
+              ✦
+            </div>
+
+            <div>
+              <h3>NOVA FLOW</h3>
+              <p>
+                Personaliza las animaciones de pantalla completa.
+              </p>
+            </div>
+
+            <button
+              id="settingsNova"
+              class="small-button"
+            >
+              Abrir
+            </button>
+
+          </article>
+
+
+          <article class="settings-card">
+
+            <div class="settings-icon">
+              💾
+            </div>
+
+            <div>
+              <h3>Datos locales</h3>
+              <p>
+                Exporta o importa tu configuración.
+              </p>
+            </div>
+
+            <div class="settings-actions">
+
+              <button
+                id="exportData"
+                class="small-button"
+              >
+                Exportar
+              </button>
+
+              <button
+                id="importData"
+                class="small-button"
+              >
+                Importar
+              </button>
+
+              <input
+                id="importFile"
+                type="file"
+                accept=".json,application/json"
+                hidden
+              >
+
+            </div>
+
+          </article>
+
+
+          <article class="settings-card danger-card">
+
+            <div class="settings-icon">
+              ♻️
+            </div>
+
+            <div>
+              <h3>Restablecer</h3>
+              <p>
+                Borra las preferencias locales de ÚtilHub.
+              </p>
+            </div>
+
+            <button
+              id="resetApp"
+              class="small-button danger-button"
+            >
+              Restablecer
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+    <!-- ===================================================
+         FOOTER
+         =================================================== -->
+
+    <footer class="footer">
+
+      <div>
+        <strong>ÚtilHub V17</strong>
+        <span>· NOVA FLOW X</span>
+      </div>
+
+      <div>
+        Hecho para ser útil.
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       MODAL DE HERRAMIENTAS
+       ===================================================== -->
+
+  <div
+    id="toolModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-modal
+    ></div>
+
+    <div class="modal-dialog">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span
+            id="modalIcon"
+            class="modal-icon"
+          >
+            🧰
+          </span>
+
+          <div>
+            <span
+              id="modalCategory"
+              class="eyebrow"
+            >
+              UTILIDAD
+            </span>
+
+            <h2 id="modalTitle">
+              Herramienta
+            </h2>
+
+          </div>
+
+        </div>
+
+        <button
+          id="closeToolModal"
+          class="icon-button"
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        id="modalBody"
+        class="modal-body"
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MODAL NOVA
+       ===================================================== -->
+
+  <div
+    id="novaModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-nova
+    ></div>
+
+    <div class="modal-dialog nova-modal-dialog">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="modal-icon">
+            ✦
+          </span>
+
+          <div>
+
+            <span class="eyebrow">
+              NOVA FLOW X
+            </span>
+
+            <h2>
+              Centro NOVA
+            </h2>
+
+          </div>
+
+        </div>
+
+        <button
+          id="closeNovaModal"
+          class="icon-button"
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <p class="modal-description">
+          Escoge tu NOVA FLOW. Tu elección se guardará
+          automáticamente en este dispositivo.
+        </p>
+
+        <div
+          id="novaModalGrid"
+          class="nova-modal-grid"
+        >
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       TOAST
+       ===================================================== -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  >
+
+    <span id="toastIcon">
+      ✓
+    </span>
+
+    <span id="toastMessage">
+      Listo
+    </span>
+
+  </div>
+
+
+  <!-- =====================================================
+       TEMPLATES
+       ===================================================== -->
+
+  <template id="toolCardTemplate">
+
+    <article class="tool-card">
+
+      <button
+        class="favorite-button"
+        data-favorite
+        aria-label="Agregar a favoritos"
+      >
+        ☆
+      </button>
+
+      <div
+        class="tool-card-icon"
+        data-icon
+      >
+        🧰
+      </div>
+
+      <span
+        class="tool-card-category"
+        data-category-label
+      >
+        Utilidad
+      </span>
+
+      <h3 data-title>
+        Herramienta
+      </h3>
+
+      <p data-description>
+        Descripción.
+      </p>
+
+      <button
+        class="tool-open-button"
+        data-open-tool
+      >
+        Abrir →
+      </button>
+
+    </article>
+
+  </template>
+
+
+  <!-- =====================================================
+       SCRIPT
+       ===================================================== -->
+
+  <script src="./script.js" defer></script>
+
+</body>
+</html>
